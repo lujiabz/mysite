@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	body{
+		background: black;
+	}
+	#cv{
+		background: #fff;
+		display: block;
+		
+	}
+
+	</style>
+	<script>
+		window.onload=function(){
+			var oCv=document.getElementById('cv');
+			var oc=oCv.getContext('2d');
+
+			function toDraw(){
+
+
+				var x         =200;
+				var y         =200;
+				var r         =150;
+				var oDate     =new Date();
+				var oHour     =oDate.getHours();
+				var oMinutes  =oDate.getMinutes();
+				var oSec      =oDate.getSeconds();
+				var oPhour    =(-90+oHour*30+oMinutes*30/60)*Math.PI/180;
+				var oPMinutes =(-90+oMinutes*6)*Math.PI/180;
+				var oPsec     =(-90+oSec*6)*Math.PI/180;
+
+				oc.clearRect(0,0,oc.width,oc.height);
+
+				oc.strokeStyle="red";
+				oc.beginPath();
+				for(var i=0;i<60;i++){
+					oc.moveTo(x,y);
+					oc.arc(x,y,r,6*i*Math.PI/180,6*(i+1)*Math.PI/180,false);
+				}
+				oc.closePath();
+				oc.stroke();
+
+
+
+
+				oc.fillStyle="white";
+				oc.beginPath();	
+				oc.moveTo(x,y);
+				oc.arc(x,y,r*19/20,0,360*Math.PI/180,false);	
+				oc.closePath();
+				oc.fill();
+
+
+
+
+				oc.lineWidth=2;
+				oc.beginPath();
+				for(var i=0;i<12;i++){
+					oc.moveTo(x,y);
+					oc.arc(x,y,r,30*i*Math.PI/180,30*(i+1)*Math.PI/180,false);
+				}
+				oc.closePath();
+				oc.stroke();
+
+
+
+
+				oc.beginPath();	
+				oc.moveTo(x,y);
+				oc.arc(x,y,r*18/20,0,360*Math.PI/180,false);	
+				oc.closePath();
+				oc.fill();
+
+
+
+
+				oc.lineWidth=5;
+				oc.beginPath();
+				oc.moveTo(x,y);
+				oc.arc(x,y,r*10/20,oPhour,oPhour,false);
+				oc.closePath();
+				oc.stroke();
+
+
+
+
+
+				oc.lineWidth=3;
+				oc.beginPath();
+				oc.moveTo(x,y);
+				oc.arc(x,y,r*15/20,oPMinutes,oPMinutes,false);
+				oc.closePath();
+				oc.stroke();
+
+
+
+
+
+				oc.lineWidth=1;
+				oc.beginPath();
+				oc.moveTo(x,y);
+				oc.arc(x,y,r*17/20,oPsec,oPsec,false);
+				oc.closePath();
+				oc.stroke();
+				
+			}
+
+			setInterval(toDraw,1000);
+			toDraw();
+		}
+	</script>
+</head>
+<body>
+	<canvas id="cv" width="400px" height="400px">
+		
+	</canvas>
+</body>
+</html>

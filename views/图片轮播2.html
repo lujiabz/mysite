@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		body{
+			background: #ccc;
+		}
+		#wrapper *{
+			float: left;
+		}
+		#wrapper{
+			width: 692px;
+			height: 300px;
+			margin:50px auto;
+			position: relative;
+		}
+		#slide{
+			width: 692px;
+			height: 300px;
+			overflow: hidden;
+			position: relative;
+			
+		}
+		#slide-main{
+			position: absolute;
+		}
+		#slide ul{
+			width: 2780px;
+			list-style: none;
+		}
+		#slide ul>li img{
+			border: none;
+		}
+		#wrapper span{
+			display: block;
+			font-size: 26px;
+			line-height: 28px;
+			position: absolute;
+			padding: 136px 40px 136px 40px;
+			
+		}
+		#slide-left{
+			left: 0px;
+			
+		}
+		#slide-right{
+			right: 0px;
+		}
+		#wrapper span:hover{
+			background: rgba(255,245,238,.4);
+			cursor: pointer;
+		}
+		#slide-nav li{
+			width: 12px;
+			height: 12px;
+			display: inline-block;
+			border-radius: 6px;
+			border: 1px solid #000;
+			margin-left: 25px;
+		}
+		#slide-nav li:hover{
+			cursor: pointer;
+			background: #fff;
+		}
+		#slide-nav{
+			position: absolute;
+			
+			bottom: 0;
+			width: 692px;
+		}
+		#slide-nav ul{
+			position: absolute;
+			left: 300px;
+			bottom: 0;
+		}
+	</style>
+	<script>
+
+		function imgLeft(id){
+			$("#"+id+" li:first").animate({marginLeft:"-692px"},'slow',function(){
+				$(this).detach().appendTo("#"+id).css("margin-left","0");
+			});
+		}
+		function imgRight(id){
+			$("#"+id+" li:last").css("margin-left","-692px").detach().prependTo("#"+id).animate({marginLeft:"0px"},'slow');
+		}
+
+		function navMove(id,index){
+				$("#"+id).css("left",(-692*index)+"px");
+			}
+
+		$(document).ready(function(){
+			var myTime=setInterval("imgLeft('slide-main')",3000);
+			var $ali=$("#slide-nav li");
+			var $apic=$("#slide-main li");
+
+			$("#slide-left").click(function(){
+				imgLeft("slide-main");
+			});
+			$("#slide-right").click(function(){
+				imgRight("slide-main");
+			});
+
+			$("#wrapper").hover(function(){
+				clearInterval(myTime);
+			},function(){
+				myTime=setInterval("imgLeft('slide-main')",3000);
+			});
+
+
+			$ali.mouseenter(function(){
+				var index=$ali.index(this);
+				$("#p"+index).show().siblings().hide();
+			});
+
+			$ali.mouseout(function(){
+				var index=$ali.index(this);
+				var $ap=$("#p"+index).prevAll();
+				for (var i = $ap.length-1; i >=0; i--) {
+					$ap.eq(i).detach().appendTo("#slide-main");
+				};
+				
+				$("#slide-main li").show();
+
+			});
+			
+
+		})
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		
+		<div id="slide">
+			<ul id="slide-main">
+				<li id="p0"><a href="#"><img src="images/img_01.jpg" alt=""></a></li>
+				<li id="p1"><a href="#"><img src="images/img_02.jpg" alt=""></a></li>
+				<li id="p2"><a href="#"><img src="images/img_03.jpg" alt=""></a></li>
+				<li id="p3"><a href="#"><img src="images/img_04.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<span id="slide-left"><</span>
+		<span id="slide-right">></span>
+
+		<div id="slide-nav">
+			<ul >
+				<li><div></div></li>
+				<li><div></div></li>
+				<li><div></div></li>
+				<li><div></div></li>
+			</ul>
+		</div>
+		
+		
+		
+		
+	</div>
+</body>
+</html>

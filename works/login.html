@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{background: #ccc}
+		a{
+			text-decoration: none;
+		}
+		.login_control{
+			background: #323232;
+			padding: 20px;
+			color: #636363;
+			line-height: 60px;
+			font-family: 'Devonshire', cursive;
+			transition:all 300ms;
+		}
+		.demo{
+			width: 350px;
+			margin: 50px auto;
+		}
+		.login_control h2{
+			font-size: 36px;
+			color: #ffffff;
+			font-weight: normal;
+			text-align: center;
+			line-height: 20px;
+		}
+		.login_control input[type='text'],
+		.login_control input[type='password']{
+			width: 100%;
+			height: 40px;
+			padding: 0 2px;
+			border: none;
+			transition:all,300ms;
+			box-sizing:border-box;
+		}
+		input:focus{
+			outline: 0 none;
+			box-shadow: 0 0 0 5px #00aec7;
+		}
+		.login_control input[type='checkbox']{
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+		.form-item-3{
+			text-align: left;
+			line-height: 20px;
+			margin-bottom: 20px;
+		}
+		.fr{
+			float: right;
+			color: #4DEEE1;
+		}
+		.fr:hover {
+			text-decoration: underline;
+		}
+		.login_control input[type='button']:hover{
+			background: #006675;
+		}
+		.login_control input[type="button"]{
+			color: #ffffff;
+			font-size: 36px;
+			width: 100%;
+			height: 70px;
+			border: none;
+			background: #00aec7;
+			cursor: pointer;
+			transition:all,300ms;
+			font-family: 'Devonshire', cursive;
+		}
+
+	</style>
+</head>
+<body>
+	<section class="demo">
+		<div class="login_control">
+			<form action="" class="form-item">
+
+				<h2>登录</h2>
+
+				<div>
+					<input type="text" placeholder="username"/>
+				</div>
+
+				<div>
+					<input type="text" placeholder="password"/>
+				</div>
+
+				<div class="form-item-3">
+					<input type="checkbox" id="showps" checked="true"/>
+					<label for="showps">显示密码</label>
+					<a href="#" class="fr">忘记密码？</a>
+				</div>
+					
+				<div>
+					<input type="button" value="sign in"/>
+				</div>
+
+			</form>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jquery-1.9.1.min.js'></script>
+	<script>
+		$(document).ready(function(){
+			var $oe_menu       =$('#oe_menu');
+			var $oe_menu_items =$oe_menu.children('li');
+			var $oe_overlay    =$('#oe_overlay');
+			$oe_menu_items.bind('mouseenter',function(){
+				var $this=$(this);
+				$this.addClass('slided selected');
+				$this.children('div').css('z-index','9999').stop(true,true).slideDown(200,function(){
+					$oe_menu_items.not('.slided').children('div').hide();
+					$this.removeClass('slided');
+				});
+			}).bind('mousrleave',function(){
+				var $this=$(this);
+				$this.removeClass('selected').children('div').css('z-index','1');
+			});
+			
+		});
+	</script>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			background: lightblue;
+		}
+		.oe_overlay{
+			background: #000;
+			opacity: 0;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+		}
+		ul.oe_menu{
+			list-style: none;
+			position: relative;
+			margin: 30px 0 0 40px;
+			width: 560px;
+			float: left;
+			clear: both;
+		}
+		ul.oe_menu > li{
+			width: 112px;
+			height: 101px;
+			padding-bottom: 2px;
+			float: left;
+			position: relative;
+
+		}
+		ul.oe_menu >li>a{
+			display: block;
+			background: #101010;
+			color: #aaa;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 12px;
+			width: 90px;
+			height: 80px;
+			padding: 10px;
+			margin:1px;
+			text-shadow:0 0 1px #000;
+			opacity: 0.8;
+		}
+		ul.oe_menu >li>a:hover,
+		ul.oe_menu >li.selected>a{
+			background: #fff;
+			color: #101010;
+			opacity: 1;s
+		}
+		.oe_wrapper ul.hovered >li>a{
+			background: #fff;
+			text-shadow:0 0 1px #fff;
+		}
+		ul.oe_menu div{
+			position: absolute;
+			top:103px;
+			left: 1px;
+			background: #fff;
+			width: 498px;
+			height: 180px;
+			padding: 30px;
+			/*display: none;*/
+		}
+		ul.oe_menu div ul li a{
+			text-decoration: none;
+			color: #222;
+			padding: 2px 2px 2px 4px;
+			margin: 2px;
+			display: block;
+			font-size: 12px;
+		}
+		ul.oe_menu div ul li a:hover{
+			background: #000;
+			color: #fff;
+		}
+		ul.oe_menu li ul{
+			list-style: none;
+			float: left;
+			width: 150px;
+			margin-right: 10px;
+		}
+		li.oe_heading{
+			color: #aaa;
+			font-size: 16px;
+			margin-bottom: 10px;
+			padding-bottom: 6px;
+			border-bottom: 1px solid #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div class="oe_wrapper">
+		<div class="oe_overlay" id="oe_overlay">
+			
+		</div>
+		<ul class="oe_menu" id="oe_menu">
+			<li>
+				<a href="#">Collections</a>
+				<div>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#">Projects</a>
+				<div style="left:-111px;">
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#">Events</a>
+				<div style="left:-223px;">
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#">Events</a>
+				<div style="left:-335px;">
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#">Events</a>
+				<div style="left:-447px;">
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="oe_heading">
+							summer 2013
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+						<li>
+							<a href="#">milan</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

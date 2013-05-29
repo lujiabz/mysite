@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	
+	</script>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.clearfix:after{
+			content: '.';
+			display: block;
+			visibility: hidden;
+			clear:both;
+			height: 0;
+
+			
+
+			
+		}
+		.demo{
+			width: 933px;
+			margin: 50px auto;
+
+		}
+		.nav-items{
+			background: #00aec7;
+			line-height: 60px;
+			
+			list-style: none;
+		}
+		.nav-items>li{
+			float: left;
+			position: relative;
+		}
+		.nav-items>li a{
+			display: block;
+			color: #fff;
+			text-decoration: none;
+		}
+		.nav-items>li>a{
+			font-size: 22px;
+			font-weight: bold;
+			padding: 0 31px;
+			border-left: 1px solid #3bc1d4;
+		}
+		.nav-items>li:first-child a{
+			border-left: none;
+		}
+		.nav-items li:hover{
+			background: #006675;
+		}
+		.nav-items >li .nav-sub-items{
+			background: #00aec7;
+			width: 100%;
+			line-height: 40px;
+			list-style: none;
+			position: absolute;
+			left: 1px;
+			font-size: 18px;
+			display: none;
+
+		}
+		.nav-sub-items li a{
+			padding-left: 31px;
+			
+
+		};
+		.nav-items li:last-child {
+			margin-right: 0px;
+		}
+		.nav-items >li:hover .nav-sub-items{
+			display: block;
+		}
+		.nav-sub-items li:hover a{
+			position: relative;
+			-webkit-transform:translateX(10px);
+			-webkit-transition:all 0.2s ease;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<div class="nav">
+			<ul class="nav-items clearfix">
+				<li><a href="#" >HOME</a></li>
+				<li><a href="#">service</a></li>
+				<li><a href="#">project</a></li>
+				<li><a href="#">project</a></li>
+				<li><a href="#">project</a></li>
+				<li><a href="#">about</a></li>
+				<li><a href="#">blog</a>
+					<ul class="nav-sub-items">
+						<li><a href="#">link1</a></li>
+						<li><a href="#">link2</a></li>
+						<li><a href="#">link3</a></li>
+						<li><a href="#">link4</a></li>
+
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

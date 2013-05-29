@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<style>
+		#wrapper{
+			width: 900px;
+			margin:50px auto;
+
+		}
+	</style>
+	<script>
+		$(function(){
+
+			//全局变量
+			var snake=$("#snake")[0];
+			var ctx=snake.getContext("2d");
+			var w=$("#snake").width();
+			var h=$("#snake").height();			
+			var cw=10;
+			var myTime;
+			var xIndex=(w-cw)/cw;
+			var yIndex=(h-cw)/cw;			
+			var $score=$("#score");
+			var $score2=$("#score2");
+			var $time=$("#time");
+
+
+			//捕获按键事件
+			$(document).keydown(function(e){
+				var key=e.which;
+
+				if(key==37 && snake1.direction !="right") snake1.direction="left";
+				else if(key==38 && snake1.direction !="down") snake1.direction="up";
+				else if(key==39 && snake1.direction !="left") snake1.direction="right";
+				else if(key==40 && snake1.direction !="up") snake1.direction="down";
+
+				else if(key==65 && snake2.direction !="right") snake2.direction="left";
+				else if(key==87 && snake2.direction !="down") snake2.direction="up";
+				else if(key==68 && snake2.direction !="left") snake2.direction="right";
+				else if(key==83 && snake2.direction !="up") snake2.direction="down";
+			});
+
+			//构造蛇
+			function create_snake(locationy,color){
+				this.snake_array=[];
+				this.direction="right";
+				this.nx;
+				this.ny;
+				this.color=color;
+				this.score=0;
+				for(var i=4;i>=0;i--)
+				{
+					this.snake_array.push({x:i,y:locationy});
+				}
+			}
+
+
+			create_snake.prototype.paint_cell=function(x,y,color){
+				ctx.fillStyle=color;
+				ctx.fillRect(x*cw,y*cw,cw,cw);
+				ctx.strokeStyle="#fff";
+				ctx.strokeRect(x*cw,y*cw,cw,cw);
+			}
+
+			create_snake.prototype.paint_self=function(){
+				for(var i=0;i<this.snake_array.length;i++)
+				{
+					var c=(this.snake_array)[i];
+					
+					
+					this.paint_cell(c.x,c.y,this.color);
+					
+					
+				}
+			}
+
+			//构造食物
+			function food(color){
+				
+				this.color=color;
+				this.location={x:Math.round(Math.random()*xIndex),y:Math.round(Math.random()*yIndex)};
+			}
+
+			food.prototype.paint_food=function(){
+				ctx.fillStyle=this.color;
+				ctx.fillRect(this.location.x*cw,this.location.y*cw,cw,cw);
+				ctx.strokeStyle="#fff";
+				ctx.strokeRect(this.location.x*cw,this.location.y*cw,cw,cw);
+			}
+
+			food.prototype.generate=function(){
+				return {
+					x:Math.round(Math.random()*xIndex),
+					y:Math.round(Math.random()*yIndex)
+				}
+			}
+
+			//检查蛇是否碰到自己或墙壁
+			function check_collision(arr,arr1){
+				if(snake1.nx < 0 || snake1.nx == w/cw || snake1.ny < 0 || snake1.ny == h/cw || snake2.nx < 0 || snake2.nx == w/cw || snake2.ny < 0 || snake2.ny == h/cw)
+				{
+					alert("Game Over");
+					clearInterval(myTime); 
+				}
+				for(var i=0;i<arr.length;i++)
+				{
+					if(arr[i].x==snake1.nx && arr[i].y==snake1.ny)
+					{
+						alert("Game Over");
+						clearInterval(myTime); 
+					}
+					for(var j=0;j<arr1.length;j++)
+					{
+						if(arr[i].x==arr1[j].x && arr[i].y==arr1[j].y)
+						{
+							alert("Game Over");
+							clearInterval(myTime); 
+						}
+					}
+				}
+				for(var z=0;z<arr1.length;z++)
+				{
+					if(arr1[z].x==snake2.nx && arr1[z].y==snake2.ny)
+					{
+						alert("Game Over");
+						clearInterval(myTime); 
+					}
+				}
+				
+			}
+
+			//检查是否碰到食物
+			function check_food(obj1,obj2,obj3,xsnake){
+
+				if(xsnake.nx==obj1.location.x && xsnake.ny== obj1.location.y)
+				{
+					var tail={x:xsnake.nx,y:xsnake.ny};
+					obj1.location=obj1.generate();
+					xsnake.score+=10;
+					
+					
+				}
+				else if(xsnake.nx==obj2.location.x && xsnake.ny== obj2.location.y)
+				{
+					var tail={x:xsnake.nx,y:xsnake.ny};
+					obj2.location=obj2.generate();
+					xsnake.score+=20;
+					
+					
+				}
+				else if(xsnake.nx==obj3.location.x && xsnake.ny== obj3.location.y)
+				{
+					var tail={x:xsnake.nx,y:xsnake.ny};
+					obj3.location=obj3.generate();
+					xsnake.score+=30;
+					
+					
+				}
+				else
+				{
+					var tail=xsnake.snake_array.pop();
+					tail.x=xsnake.nx;
+					tail.y=xsnake.ny;
+				}
+				xsnake.snake_array.unshift(tail);
+
+
+			}
+
+			//检查方向
+				function check_direction(obj){
+				switch ( obj.direction )           
+				{
+					case "left" : obj.nx-- ; break ;
+					case "right" : obj.nx++ ; break ;
+					case "up" : obj.ny-- ; break ;
+					case "down" : obj.ny++ ; break ;
+				}
+			}
+
+			//初始化
+			function init(){
+				snake1=new create_snake(0,"blue");
+				snake2=new create_snake(yIndex,"green");
+				food1=new food("red");
+				food2=new food("purple");
+				food3=new food("yellow");
+				
+				$score.val(snake1.score);
+				$score2.val(snake2.score);
+				$time.val(60);
+				
+				paint();			
+				myTime=setInterval(paint,1000);
+				myTime1=setInterval(function(){
+					var c=parseInt($time.val());
+					c--;
+					if(c==0)
+					{						
+						clearInterval(myTime1);
+						clearInterval(myTime);
+						if(snake1.score<snake2.score) alert("时间到，玩家二获胜！！");
+						else if(snake1.score>snake2.score) alert("时间到，玩家一获胜！！");
+						else alert("时间到，平分秋色！！");
+					}
+					
+					$time.val(c);
+				},1000);		
+			}
+			init();
+
+
+			//绘制地图
+			function paint(){
+
+				//画布
+				ctx.fillStyle="#ccc";
+				ctx.fillRect(0,0,w,h);                
+				ctx.strokeStyle="#000";
+				ctx.strokeRect(0,0,w,h);
+
+				//下一个位置
+				snake1.nx=snake1.snake_array[0].x;           
+				snake1.ny=snake1.snake_array[0].y;
+				snake2.nx=snake2.snake_array[0].x;           
+				snake2.ny=snake2.snake_array[0].y;
+
+				//检查蛇的方向
+				
+				check_direction(snake1);
+				check_direction(snake2);
+
+				//检查是否与墙或自身碰撞
+				check_collision(snake1.snake_array,snake2.snake_array);
+				
+
+				//检查是否碰到食物
+				check_food(food1,food2,food3,snake1);
+				check_food(food1,food2,food3,snake2);   
+
+				$score.val(snake1.score);
+				$score2.val(snake2.score);
+
+				//画蛇
+				snake1.paint_self(); 
+				snake2.paint_self(); 
+				//画第一种食物                   
+				food1.paint_food();   
+				//画第一种食物                   
+				food2.paint_food(); 
+				//画第一种食物                     
+				food3.paint_food();                      
+			}
+
+
+		})
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<canvas id="snake" width="900px" height="450px"></canvas>
+		<div>
+			玩家一得分: <input id="score" type="text"/>
+			玩家二得分: <input id="score2" type="text"/>
+			倒计时:<input id="time" type="text">
+		</div>
+		<div>
+			<ul>
+				<li><a href="#">操作说明</a></li>
+				<li><a href="#">玩家分数</a></li>
+			</ul>
+		</div>
+	</div>
+	
+</body>
+</html>
+
+
+

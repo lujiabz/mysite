@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style>
+	body{
+		background: #ccc;
+
+	}
+	div[class^="item-"]{
+		background: #ffffff;
+		margin-left: 10px;
+	}
+	.demo{
+		margin:50px auto;
+		width: 960px;
+
+	}
+	
+	.item-list li{
+		float: left;
+		width: 33%;
+		text-align: center;
+		overflow: hidden;
+	}
+	.item-list h2{
+		color: #fff;
+		font-size: 30px;
+		line-height: 60px;
+		background: #00aec7;
+		transition:all 200ms linear;
+	}
+	
+	
+	.item-list h3{
+		font-size: 24px;
+		line-height: 100px;
+	}
+	.item-list p{
+		color: #969696;
+		transition: all 200ms linear;
+		padding: 0px 20px 40px;
+	}
+	.item-list div:hover h2{
+		background: #006675;
+		transition:all 2s linear;
+	}
+	.item-list div:hover h2 span{
+		display: inline-block;
+		-webkit-animation:moveF_Left 500ms ease;
+	}
+	.item-list div:hover h3{
+		
+		-webkit-animation:moveF_Right 500ms ease;
+	}
+	.item-list div:hover h3 span{
+		font-size: 60px;
+	}
+	.item-list div:hover p {
+  		-webkit-animation: moveF_Bottom 500ms ease;
+  		color: #00aec7;
+	}
+	.item-list em{
+		color: #00aec7;
+		transition:all 200ms linear;
+	}
+	.item-list h3 span{
+		font-size: 48px;
+		transition:all 200ms linear;
+	}
+	
+
+	@-webkit-keyframes moveF_Left{
+		0%{
+			-webkit-transform:translateX(-100%);
+		}
+		100%{
+			-webkit-transform:translateX(0);
+		}
+	}
+	@-webkit-keyframes moveF_Right{
+		0%{
+			-webkit-transform:translateX(100%);
+		}
+		100%{
+			-webkit-transform:translateX(0);
+		}
+	}
+	@-webkit-keyframes moveF_Bottom{
+		0%{
+			-webkit-transform:translateY(100%);
+		}
+		100%{
+			-webkit-transform:translateY(0);
+		}
+	}
+	
+
+
+
+	</style>
+</head>
+<body>
+	<div>
+		<section class="demo">
+			<div class="item">
+				<ul class="item-list">
+
+					<li>
+						<div class="item-1">
+							<h2><span>BasicBasic</span></h2>
+							<h3>$<span>5</span>.99 <em>/</em> Month</h3>
+							<p>some text</p>
+						</div>
+						
+					</li>
+
+
+
+
+
+					<li >
+						<div class="item-2">
+							<h2><span>Advanced</span></h2>
+							<h3>$<span>10</span>.99 <em>/</em> Month</h3>
+							<p>some text</p>
+						</div>
+					</li>
+
+
+
+
+
+
+
+					<li >
+						<div class="item-3">
+							<h2><span>Premium</span></h2>
+							<h3>$<span>99</span>.00 <em>/</em> Month</h3>
+							<p>some text</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

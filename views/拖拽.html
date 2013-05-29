@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function(){
+			var x,y;
+			var flag;
+			var oDiv=$('#div1');
+			oDiv.mousedown(function(event){
+				flag="true";
+				x=event.pageX-oDiv.offset().left;
+				y=event.pageY-oDiv.offset().top;
+			});
+			$(document).mousemove(function(event){
+				if(event.pageY>=$(window).height()||event.pageY<=0)
+				
+				{
+					flag="false";
+				}
+				if(flag=="true")
+				oDiv.offset({left:event.pageX-x,top:event.pageY-y});
+
+			});
+
+			oDiv.mouseup(function(event){
+				flag="false";
+			});
+			
+			var a=[3,7,5,6];
+			var b=a.toString();
+
+			
+
+
+
+		})
+	</script>
+	<style>
+		body{
+		
+		}
+		#bnt{
+			
+		}
+		#div1{
+			width: 200px;
+			height:200px;
+			background: red;
+			position: absolute;
+
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

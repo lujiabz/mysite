@@ -1,0 +1,15 @@
+body {
+  background: #ccc;
+}
+#content {
+	background: #fff;
+	border-radius: 5px;
+}
+.sidebar {
+	padding: 20px;
+	text-align: center;
+}
+.main {
+	padding: 20px;
+
+}

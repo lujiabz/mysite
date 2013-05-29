@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	
+	<style>
+	body{
+		
+		background: #f6f6f6;
+	}
+	.demo{
+		width: 940px;
+		margin: 40px auto 0;
+	}
+	
+	
+	.main_promo{
+		border: 5px solid #3d3d3d;
+		border-radius: 7px;
+		box-shadow: 0 8px 16px rgba(0,0,0,.2);
+		background: #1c1c1c;
+		overflow: hidden;
+		list-style: none;
+		padding: 0px;
+	}
+	.main_promo li{
+		position: relative;
+		float: left;
+		
+		padding: 5px 0 5px 6px;
+		overflow: hidden;
+
+	}
+	.main_promo div{
+		float: left;
+	}
+	.slide a{
+		position: relative;
+		z-index: 1;
+		display: block;
+		outline: none;
+		width: 50px;
+		height: 300px;
+		border-radius: 5px;
+		background: #303030;
+		transition: all 0.3s ease-in;
+
+	}
+	.slide p{
+		position:absolute;
+		top: 30px;
+		left: -25px;
+		color: #ddd;
+		height: 20px;
+		width: 100px;
+		font-size: 14px;
+		font-weight: bold;
+		text-shadow:0 1px 1px rgba(0,0,0.8);
+		-webkit-transform:rotate(-90deg);
+		transform:rotate(-90deg);
+	
+	}
+
+	.slide_img{
+		overflow: hidden;
+		width: 0;
+		height: 0;
+		transition:width 0.5s ease-in-out;
+	}
+	.slide_img img{
+		width: 692px;
+		height: 300px;
+	}
+	input[type="radio"]{
+		position: absolute;
+		left: 5px;
+		z-index: 99;
+		width: 50px;
+		height: 300px;
+		opacity: 0;
+		cursor: pointer;
+	}
+	input:checked ~ .slide a{
+		text-decoration: none;
+		background:radial-gradient(circle,#434343,#303030);
+	}
+	input:checked ~ .slide_img{
+		overflow: visible;
+		width: 692px;
+		height: 300px;
+		margin-left: 8px;
+	}
+
+	</style>
+</head>
+<body>
+	<section class="demo">
+		
+	
+	<ul class="main_promo clearfix">
+		<li>
+			<input type="radio" name="radio_set">
+			<div class="slide">
+				<a href="#"><p>slide one</p></a>
+			</div>
+			<div class="slide_img">
+				<img src="http://placehold.it/692x350" alt="">
+			</div>			
+		</li>
+		<li>
+			<input type="radio" name="radio_set">
+			<div class="slide">
+				<a href="#"><p>slide two</p></a>
+			</div>
+			<div class="slide_img">
+				<img src="http://placehold.it/692x350" alt="">
+			</div>	
+		</li>
+		<li>
+			<input type="radio" name="radio_set">
+			<div class="slide">
+				<a href="#"><p>slide three</p></a>
+			</div>
+			<div class="slide_img">
+				<img src="http://placehold.it/692x350" alt="">
+			</div>	
+		</li>
+		<li>
+			<input type="radio" name="radio_set">
+			<div class="slide">
+				<a href="#"><p>slide four</p></a>
+			</div>
+			<div class="slide_img">
+				<img src="http://placehold.it/692x350" alt="">
+			</div>	
+		</li>
+		
+	</ul>
+	</section>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jquery-1.9.1.min.js'></script>
+	<script src="unslider.js"></script>
+	<style>
+		.banner { position: relative; overflow: auto; }
+	    .banner li { list-style: none; }
+        .banner ul li { float: left; }
+	</style>
+	<script>
+		$(function() {
+    		$('.banner').unslider();
+		});
+	</script>
+</head>
+<body>
+	<div class="banner">
+	    <ul>
+	        <li><img src="images/1.png" alt=""></li>
+	        <li><img src="images/2.png" alt=""></li>
+	        <li><img src="images/3.jpg" alt=""></li>
+	    </ul>
+	</div>
+</body>
+</html>

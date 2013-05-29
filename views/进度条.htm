@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.progress-bar-item{
+		position: relative;
+		width: 500px;
+		height: 10px;
+		background: #323232;
+	}
+	.progress{
+		position: relative;
+		height: 10px;
+		background: #00aec7;
+	}
+	.bar-1 .progress{
+		width: 0;
+		-webkit-animation:bar-1 10s linear 2s infinite;
+	}
+	p{
+		margin-top: 3px;
+	}
+	.check{
+		position: relative;
+		margin: 100px;
+	}
+	.checkbox-item{
+		display: inline-block;
+	}
+	@-webkit-keyframes bar-1{
+		0%{
+			width: 0;
+		}
+		100%{
+			width: 100%;
+		}
+	}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<section>
+			<div class="controls-progress-bar">
+				<div class="progress-bar-item mt-20">
+					<div class="bar-1">
+						<div class="progress"></div>
+					</div>
+					<p>loading...</p>
+				</div>
+
+				
+			</div>
+			
+
+			
+		</section>
+	</div>
+</body>
+</html>

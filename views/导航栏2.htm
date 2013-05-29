@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	</script>
+	<style>
+		*{
+			margin: 0;
+			padding:0;
+			list-style: none;
+		}
+		#menu{
+			width: 960px;
+
+			margin: 50px auto;
+			padding: 10px 0 0 0;
+			
+			
+			background: -webkit-gradient(linear,
+				left bottom,left top,
+				color-stop(0,#111),
+				color-stop(1,#444));
+			border-radius: 50px;
+		}
+		#menu>li{
+			float: left;
+			padding: 0 0 10px 0;
+			position: relative;
+		}
+		#menu a{
+			display: block;
+			height: 25px;
+			padding: 0 25px;
+			color: #999;
+			text-transform: uppercase;
+			font:bold 12px/25px arial,Helvetica;
+			text-decoration: none;
+			text-shadow:0 1px 0 #000;
+		}
+		#menu:after{
+			content: "";
+			display: block;
+			visibility: hidden;
+			font-size: 0;
+			line-height: 0;
+			clear:both;
+		}
+		#menu li:hover> a{
+			color: #fafafa;
+		}
+		#menu li:hover ul{
+			display: block;
+		}
+		#menu ul{
+			display:none;
+			position: absolute;
+			top: 35px;
+			left: 0px;
+			z-index: 999;
+			background: -webkit-gradient(linear,
+				left bottom,left top,
+				color-stop(0,#111),
+				color-stop(1,#444));
+			border-radius: 5px;
+		}
+		#menu ul li{
+			box-shadow: 0 1px 0 #111111,0 2px 0 #777777;
+
+		}
+		#menu ul li:last-child{
+			box-shadow: none;
+		}
+		#menu ul a{
+			padding: 10px;
+			height: auto;
+			line-height: 1;
+			display: block;
+			white-space: nowrap;
+
+		}
+		#menu ul a:hover{
+			background:-webkit-gradient(linear, left top, left bottom, from(#04acec), to(#0186ba));
+
+		}
+		
+		#menu ul li:first-child a:after{
+		    content: '';
+		    position: absolute;
+		    left: 30px;
+		    top: -8px;
+		    width: 0;
+		    height: 0;
+		    border-left: 5px solid transparent;
+		    border-right: 5px solid transparent;
+		    border-bottom: 8px solid #444;
+		}
+		#menu ul li:first-child a:hover:after{
+			border-bottom:8px solid #04acec;
+		}
+		#menu ul li:last-child a{
+			border-radius: 0 0 5px 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="nav">
+		<ul id="menu">
+			<li><a href="#">HOME</a></li>
+			<li>
+				<a href="#">Categories</a>
+				<ul>
+					<li><a href="#">CSS</a></li>
+					<li><a href="#">Graphic design</a></li>
+					<li><a href="#">Development tools</a></li>
+					<li><a href="#">Web design</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Work</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+</body>
+</html>
