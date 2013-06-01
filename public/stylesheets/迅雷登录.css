@@ -1,0 +1,175 @@
+/*	
+*	description: 迅雷会员登录页面;
+*	author: sunny;
+*	last modified: 27/5/2013 ;
+*/
+
+/*全局配置*/
+html,body,form,ul,ol,p,dl,dt,dd,label,input,textarea,h1,h2,h3,h4,fieldset{margin:0;padding:0; list-style: none;}
+html { background:#fff;}
+body {font:normal 12px/1.6em Arial,Tahoma,sans-serif;color:#333;}
+a { text-decoration: none; color: #646464;}
+img {border: none;}
+a:hover {
+	text-decoration: underline;
+}
+.clearfix:after {
+	content: ",";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	font-size: 0;
+}
+
+/*header*/
+.header {
+	width: 960px;
+	height: 80px;
+	margin: 0 auto;
+}
+.header a {
+	display: block;
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px;
+	height: 66px;
+
+}
+/*main*/
+.main {
+	width: 960px;
+	height: 420px;
+	margin: 0 auto;
+}
+.showing {
+	width: 650px;
+	
+}
+
+.aside {
+	float: right;
+	width: 240px;
+	margin-right: 40px;
+	
+}
+.aside h1 {
+	vertical-align: top;
+	font-size: 2em;
+	line-height: 1.6em;
+}
+form input{
+	display: block;
+	width: 230px;
+	margin: 10px 0 10px 0;
+	border: 1px solid #ccc;
+	padding: 11px 0 10px 10px;
+
+}
+.submit {
+	width: 242px;
+	background: #c80000;
+	border: none;
+	color: #fff;
+	font-size: 1.6em;
+	height: 39px;
+	line-height: 1em;
+}
+.forget {
+	margin: 20px 0 20px 0;
+}
+
+/*map*/
+.map {
+	
+	background: #646464;
+	padding: 20px 0;
+	box-shadow: 0 2px 0 #f00;
+}
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+	
+}
+.wrapper a {
+	padding-right: 5px;
+	color: #969696;
+	height: 10px;
+
+}
+.t_01 {
+	margin-bottom: 10px;
+	font-size: 20px;
+	color: #fff;
+}
+.t_02 {
+	color: #969696;
+	margin-bottom: 5px;
+}
+.kefu {
+	padding-left: 20px;
+	width: 275px;
+
+}
+.wrapper>div {
+	float: left;
+}
+.fuwu {
+	width: 375px;
+	padding-left: 20px;
+}
+.t_03 {
+	display: block;
+	float: left;
+	width: 33%;
+}
+.shequ {
+	margin-left: 40px;
+}
+
+/*footer*/
+.footer {
+	background: #e3e3e3;
+	height: 120px;
+}
+.foot-container {
+	width: 960px;
+	margin: 0 auto;
+	padding: 30px 0 ;
+}
+.picture {
+	width: 130px;
+	height: 58px;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	border-right: 1px solid #ccc;
+}
+.picture img {
+	position: absolute;
+	bottom: -82px;
+
+}
+.rcp {
+	list-style: none;
+	float: left;
+	margin-left: 15px;
+}
+.rcp ul {
+	display: block;
+	clear: both;
+}
+.rcp ul li {
+	float: left;
+	padding-right: 5px;
+	color: #b3b3b3;
+}
+.line li a{
+	padding-right: 5px;
+	border-right: 2px solid #ccc;
+	
+}
+.footer a {
+	color: #b3b3b3;
+	transform:;
+}

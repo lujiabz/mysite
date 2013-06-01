@@ -4,7 +4,7 @@
  */
 
 module.exports = function(app){
-	app.get('/', function(req,res)
+	app.get('/css', function(req,res)
 		{
 			res.render('index', { title: '阅微笔记' });
 		});
@@ -16,7 +16,7 @@ module.exports = function(app){
 		{
 			res.render('jQuery', { title: '阅微笔记/jQuery' });
 		});
-	app.get('/homepages', function(req,res)
+	app.get('/', function(req,res)
 		{
 			res.render('homepages', { title: '阅微笔记/homepages' });
 		});

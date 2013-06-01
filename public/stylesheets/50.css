@@ -1,0 +1,139 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body {
+	background-image: url(/images/ticks.png);
+}
+a {
+	color: #000;
+}
+a:hover {
+	text-decoration: underline;
+}
+.clearfix:after {
+	content: ",";
+	display: block;
+	visibility: hidden;
+	clear: both;
+	height: 0;
+}
+.clearfix {
+	*zoom:1;
+}
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+#header {
+	height: 100px;
+}
+.logo {
+	font-size: 56px;
+	color: #fff;
+	background: #ff4486;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+.motto {
+	margin-top: 40px;
+	margin-left: 20px;
+	font-size: 22px;
+	font-weight: bold;
+}
+.nav li {
+	float: left;
+	border-radius: 5px;
+	font-size: 22px;
+	margin-left: 40px;
+}
+.nav li a {
+	display: block;
+	padding: 5px;
+
+}
+.noactive:hover {
+	background: #fff;
+	opacity: 0.3;
+}
+
+.nav {
+	margin-top: 35px;
+}
+.active {
+	background: #000;
+	
+}
+.active a {
+	color: #fff;
+}
+.show {
+	height: 300px;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 3px 0 #ccc;
+	margin: 40px 0;
+}
+.main {
+	padding: 50px 80px;
+}
+.title {
+	padding-bottom: 20px;
+}
+.main p a {
+	display: block;
+	background: #0090C5;
+	color: #fff;
+	font-size: 32px;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+}
+.margin-left {
+	margin-left: 30px;
+}
+.picture img {
+	display: block;
+	margin-bottom: 20px;
+}
+.block {
+	width: 300px;
+	border-radius: 5px;
+	text-align: justify;
+	background: #fff;
+	box-shadow: 0 3px 0 #ccc;
+}
+.detail {
+	padding: 20px;
+	text-align: justify;
+}
+.desc {
+	margin-bottom: 40px;
+
+}
+.item {
+	width: 185px;
+	padding: 20px;
+
+}
+.margin20 {
+	margin-left: 20px;
+}
+.item h2 {
+	margin-bottom: 20px;
+}
+.item ul li {
+	text-decoration: underline;
+	margin-bottom: 10px;
+}
+.rpc {
+	
+}

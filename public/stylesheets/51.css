@@ -1,0 +1,164 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body {
+	background: #fff;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.clearfix:after {
+	content: ",";
+	display: block;
+	visibility: hidden;
+	clear: both;
+	height: 0;
+}
+.clearfix {
+	*zoom:1;
+}
+
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+
+.mgnt-20 {
+	margin-top: 20px;
+}
+.mgnt-40 {
+	margin-top: 40px;
+}
+.mgnl-20 {
+	margin-left: 20px;
+}
+.mgnl-40 {
+	margin-left: 40px;
+}
+
+/*header*/
+.divide {
+	height: 10px;
+	background: #2c3134;
+	border-bottom: 2px solid #474d4d;
+}
+#header {
+	
+	overflow: hidden;
+	height: 400px;
+	background: #ccc;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#343d3c), to(#575d5b));
+	background: -webkit-linear-gradient(#343d3c, #575d5b);
+	background: -moz-linear-gradient(#343d3c, #575d5b);
+	background: -o-linear-gradient(#343d3c, #575d5b);
+	background: linear-gradient(#343d3c, #575d5b);
+}
+.hcontent {
+	width: 960px;
+	margin: 0 auto;
+	color: #fff;
+	height: 400px;
+	position: relative;
+}
+.logo {
+	padding: 10px 5px 5px;
+}
+.nav>li {
+	float: left;
+	border-radius: 5px;
+	font-size: 20px;
+	margin-left: 40px;
+	position: relative;
+}
+
+.nav li:hover .subnav {
+	display: block;
+}
+.nav a:hover {
+	text-decoration: none;
+}
+.subnav {
+	position: absolute;
+	width: 150px;
+	z-index: 1;
+	background: #384243;
+	display: none;
+	border-radius: 5px;
+
+}
+
+.subnav li {
+	border-bottom: 1px solid #2e3837;
+	padding-bottom: 5px;
+	padding: 10px 20px;
+}
+.subnav li:hover {
+	background: #172120;
+}
+.hl {
+	font-size: 300px;
+	position: absolute;
+	bottom: -50px;
+	font-family: 'Allura', cursive;
+	left: 100px;
+	color: #000;
+	text-shadow: 1px 0 0 #ccc;
+}
+
+/*content*/
+
+.main {
+	background: #d8d8d8;
+}
+.submain {
+	
+	width: 960px;
+	margin: 0 auto;
+}
+.block {
+	width: 30%;
+	margin-left: 10px;
+	padding: 10px;
+	margin-bottom: 20px;
+	font-family: 'Allura', cursive;
+
+}
+.block h2 {
+	margin: 20px 0;
+}
+.block2 {
+	width: 60%;
+	padding: 10px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	font-family: 'Allura', cursive;
+}
+.block2 h4 {
+	margin: 20px 0;
+
+}
+hr {
+	border: 2px solid #ccc;
+	margin-bottom: 20px;
+}
+/*footer*/
+#footer {
+	background: #1f1f1f;
+	margin-top: 20px;
+}
+#footer h1 {
+	color: #fff;
+}
+#footer .block {
+	color: #fff;
+} 
+
+

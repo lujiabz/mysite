@@ -1,0 +1,322 @@
+/*
+*	description:豆瓣首页;
+*	author：sunny;
+*	last modified: 26/5/2013 12:46pm;
+*/
+
+/*全局设置*/
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body {
+	width: 950px;
+	margin: 0 auto;
+	font: 12px Helvetica,Arial,sans-serif;
+}
+
+/*网页头部导航*/
+.nav {
+	margin-bottom: 30px;
+}
+.logo {
+	margin-top: 24px;
+	width: 168px;
+	height: 49px;
+	overflow: hidden;
+	float: left;
+	
+}
+.logo a {
+	color: #2e963d;
+	font-size: 25px;
+}
+
+.top-nav {
+	float: right;
+	width: 438px;
+	height: 21px;
+	margin-top: 34px;
+	text-align: right;
+}
+
+.top-nav ul li {
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 21px;
+	
+	height: 21px;
+}
+
+.bd {
+	clear:both;
+}
+
+.login {
+	float: right;
+	width: 356px;
+	height: 134px;
+	margin-left: 4px;
+	background: #e9eef2;
+	border-radius: 0 5px 5px 0;
+	position: relative;
+}
+#form {
+	padding: 23px 0 0 20px;
+}
+.item {
+	width: 336px;
+	height: 23px;
+	margin-bottom: 10px;
+}
+.item label {
+	padding: 3px;
+	width: 44px;
+	height: 19px;
+	letter-spacing: 10px;
+}
+.item input {
+	
+	width: 200px;
+	height: 15px;
+	border: 1px solid #ccc;
+	padding: 3px 2px;
+	margin-right: 3px;
+}
+.item a {
+	color: #3377aa;
+}
+.item1 {
+	width: 110px;
+	height: 23px;
+	margin: 0 20px 10px 0;
+
+	
+
+}
+.item1 label {
+	display: block;
+	width: 56px;
+	height: 19px;
+	margin: 4px 0 0 54px;
+	color: #666;
+	line-height: 28px;
+	
+	
+}
+.item1 label input {
+	width: 13px;
+	height: 13px;
+	margin-right: 3px;
+	vertical-align: middle;
+}
+
+.item1>input {
+	position: absolute;
+	display: block;
+	left: 150px;
+	bottom: 17px;
+	width: 80px;
+	height: 28px;
+	background: #3fa156;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	padding-bottom: 3px;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.reg {
+	background: #e9eef2;
+	width: 590px;
+	height: 134px;
+	border-radius: 5px 0 0 5px;
+}
+.reg>strong {
+	display: block;
+	width: 180px;
+	height: 80px;
+	padding-top: 46px;
+	text-align: center;
+	float: left;
+	font-size: 24px;
+	color: #666;
+	font-weight: normal;
+}
+.info {
+	width: 590px;
+	height: 47px;
+	padding: 22px 0 18px 0;
+}
+.lin-reg {
+	display: block;
+	width: 130px;
+	height: 27px;
+	float: left;
+	background: #3fa156;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	line-height: 26px;
+	border-radius: 3px;
+	
+}
+
+
+/*首页内容*/
+#bd {
+	margin-bottom: 30px;
+}
+#bd:after {
+	content: "";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+}
+#bd h1 {
+	font-size: 25px;
+	line-height: 27px;
+	padding-bottom: 15px;
+}
+.main {
+	width: 655px;
+	border-top: 1px solid #ccc;
+	float: left;
+}
+
+.section:after {
+	content: "";
+	display: block;
+	clear: both;
+	line-height: 0;
+	font-size: 0;
+}
+.section {
+	border-left: 1px solid #ccc;
+	overflow: hidden;
+}
+.item-a {
+	
+	float: left;
+	text-align: center;
+	padding-bottom: 1000px;
+	margin-bottom: -1000px;
+
+	
+	}
+.item-a a {
+	display: block;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 24px 25px 0 24px;
+	color: #333;
+}
+
+.pic img {
+	width: 84px;
+	height: 120px;
+}
+.pic {
+	width: 168px;
+	height: 120px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+.title h3{
+	line-height: 18px;
+	font-weight: normal;
+	
+}
+.title {
+	margin-bottom: 12px;
+}
+.rating {
+	color: #f00;
+}
+.desc {
+	width: 132px;
+	height: 90px;
+	padding: 20px 18px;
+	margin-bottom: 25px;
+	background: #f7f7f7;
+}
+
+/*右侧边栏*/
+.side {
+	float: right;
+	width: 250px;
+}
+#db-sidesrh input[type="text"]{
+	width: 180px;
+	height: 24px; 
+	padding: 0 2px;
+	border: 1px solid #ccc;
+	margin-right: 3px;
+}
+#db-sidesrh input[type="submit"]{
+	width: 50px;
+	height: 26px; 
+	border: 1px solid #ccc;
+	padding: 0px 0 2px 1px;
+	background: #f7f7f7;
+	vertical-align: top;
+	margin-right: 3px;
+	
+	letter-spacing: 2px;
+	
+}
+
+.mod {
+
+}
+.hd h2 {
+	margin-top: 20px;
+	font-weight: normal;
+	color: #007722;
+}
+.clearfix:after {
+	content: ",";
+	clear: both;
+	display: block;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+	zoom: 1;
+}
+.block {
+	margin-top: 12px;
+	
+}
+.block a {
+	color:#3377aa; 
+}
+.block img {
+	width: 48px;
+	height: 48px;
+}
+.mod1 .block div {
+	float: left;
+	margin-left: 10px;
+}
+
+
+/*footer*/
+#ft span {
+	display: block;
+	margin-bottom: 20px;
+}
+#icp {
+	float: left;
+}
+.fright {
+	float: right;
+
+}
+.fright a {
+	color: #3377aa;
+}
